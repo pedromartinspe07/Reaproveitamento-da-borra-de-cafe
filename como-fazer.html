@@ -121,14 +121,14 @@
 
         async function searchFlower() {
             const flowerData = await loadFlowerData();
-            const searchInput = document.getElementById("flower-name").value;
+            const searchInput = document.getElementById("flower-name").value.toLowerCase();
             const resultContainer = document.getElementById("result");
             const quantity = flowerData[searchInput];
 
             if (quantity) {
-                resultContainer.innerHTML = <p>Para a flor <strong>${searchInput}</strong>, a quantidade recomendada de borra de café é <strong>${quantity}</strong>.</p>;
+                resultContainer.innerHTML = `<p>Para a flor <strong>${searchInput}</strong>, a quantidade recomendada de borra de café é <strong>${quantity}</strong>.</p>`;
             } else {
-                resultContainer.innerHTML = <p>Desculpe, informações sobre a flor <strong>${searchInput}</strong> não estão disponíveis.</p>;
+                resultContainer.innerHTML = `<p>Desculpe, informações sobre a flor <strong>${searchInput}</strong> não estão disponíveis.</p>`;
             }
         }
     </script>
