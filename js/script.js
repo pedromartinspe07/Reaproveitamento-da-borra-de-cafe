@@ -1,45 +1,88 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Adiciona o evento de submit ao formulário de busca
-    document.querySelector('form').addEventListener('submit', search);
-});
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Flores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-container input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        .result {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+        }
+        .result p {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pesquisa de Flores</h1>
+    <div class="search-container">
+        <input type="text" id="flower-name" placeholder="Digite o nome da flor..." />
+        <button onclick="searchFlower()">Buscar</button>
+    </div>
+    <div id="result" class="result"></div>
 
-// Função para carregar dados de flores a partir de um arquivo JSON
-async function loadFlowerData() {
-    try {
-        const response = await fetch('flower-data.json'); // arquivo contendo dados sobre flores
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Erro ao carregar os dados de flores:', error);
-        return {};
-    }
-}
+    <script>
+        // Função para carregar o JSON local com os dados das flores
+        async function loadFlowerData() {
+            try {
+                const response = await fetch('flores.json'); // Carrega o arquivo JSON
+                const data = await response.json(); // Converte os dados para um objeto JS
+                return data;
+            } catch (error) {
+                console.error('Erro ao carregar o arquivo JSON:', error);
+                return {}; // Retorna um objeto vazio em caso de erro
+            }
+        }
 
-// Função para exibir os resultados da pesquisa de flores
-async function search(event) {
-    event.preventDefault(); // Impede o comportamento padrão do formulário
-    const flowerInput = document.querySelector('input[name="search"]').value.toLowerCase();
-    const resultContainer = document.getElementById('result');
-    const flowerData = await loadFlowerData();
+        // Função para realizar a pesquisa e exibir o resultado
+        async function searchFlower() {
+            const flowerData = await loadFlowerData(); // Carrega os dados das flores
+            const searchInput = document.getElementById("flower-name").value.toLowerCase(); // Pega o valor da pesquisa e converte para minúsculo
+            const resultContainer = document.getElementById("result");
+            const quantity = flowerData[searchInput]; // Busca o valor no JSON
 
-    const results = Object.keys(flowerData).filter(flower => flower.toLowerCase().includes(flowerInput));
-
-    resultContainer.innerHTML = ''; // Limpa os resultados anteriores
-
-    if (results.length > 0) {
-        resultContainer.innerHTML = '<h3>Resultados da Pesquisa:</h3>';
-        results.forEach(flower => {
-            resultContainer.innerHTML += `<p><strong>${flower}:</strong> ${flowerData[flower]}</p>`;
-        });
-    } else {
-        resultContainer.innerHTML = `<p>Nenhum resultado encontrado para "<strong>${flowerInput}</strong>".</p>`;
-    }
-}
-
-// Função para abrir o mapa em uma nova janela
-function openMap() {
-    window.open('https://www.google.com/maps', '_blank');
-}
-
-// Adiciona o evento de clique ao link do mapa
-document.querySelector('a[href="https://www.google.com/maps"]').addEventListener('click', openMap);
+            // Exibe o resultado na página
+            if (quantity) {
+                resultContainer.innerHTML = `<p>Para a flor <strong>${searchInput}</strong>, a quantidade recomendada de borra de café é <strong>${quantity}</strong>.</p>`;
+            } else {
+                resultContainer.innerHTML = `<p>Desculpe, não temos informações para a flor <strong>${searchInput}</strong>.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
