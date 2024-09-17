@@ -8,7 +8,178 @@
     <script src="js/script.js" defer></script>
     <style>
         /* Estilos para o layout */
+        body {<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaproveitamento da Borra de Café</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <!-- Adiciona o script do Font Awesome -->
+    <script src="https://kit.fontawesome.com/b00b34200a.js" crossorigin="anonymous"></script>
+    <style>
+        /* Estilos para o layout */
         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-icon {
+            max-width: 150px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        form {
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #map-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+
+        #map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html"><img src="images/logo.png" alt="Logo Imaculada Ciência" class="logo-icon"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="introducao.html">Introdução</a></li>
+                    <li><a href="como-fazer.html">Como Fazer em Casa</a></li>
+                    <li><a href="cuidados-10-dias.html">Cuidados por 10 Dias</a></li>
+                    <li><a href="informacoes.html">Informações</a></li>
+                    <li><a href="pesquisa.html">Pesquisa</a></li>
+                    <li><a href="referencias.html">Referências Bibliográficas</a></li>
+                    <li><a href="relatorio.html">Relatório</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                </ul>
+            </nav>
+            <form action="#" method="get">
+                <input type="text" name="search" placeholder="Pesquisar...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Bem-vindo ao site sobre reaproveitamento da borra de café!</h2>
+            <p>Aqui você encontrará informações sobre como reutilizar a borra de café de forma sustentável e benéfica para o meio ambiente.</p>
+            
+            <!-- Google Maps Embed API -->
+            <div id="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6896436356357!2d-43.1999451!3d-22.9029029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7ab1e9a2cbfc813!2zMjLCsDU0JzExLjAiUyA0M8KwMTEnMDcuNiJX!5e0!3m2!1spt-BR!2sbr!4v1694957685319!5m2!1spt-BR!2sbr" 
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <p>Veja a localização em tempo real do nosso ponto de coleta de borra de café diretamente no mapa acima!</p>
+
+            <p>Contate-nos: <a href="mailto:pedro.20230035@cicrecife.com.br">pedro.20230035@cicrecife.com.br</a> | Telefone: +55 81 99875-6427</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Reaproveitamento da Borra de Café</p>
+    </footer>
+</body>
+</html>
+
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
