@@ -1,0 +1,46 @@
+# Workflow para implantar conteúdo estático no GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Executa nas pushes direcionadas ao branch "main"
+  push:
+    branches: ["main"]
+
+  # Permite que você execute esse workflow manualmente na aba Actions
+  workflow_dispatch:
+
+# Define permissões para o GITHUB_TOKEN permitir a implantação no GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite apenas uma implantação concorrente, ignorando execuções na fila entre a execução em andamento e a última na fila.
+# No entanto, NÃO cancela execuções em andamento, permitindo que as implantações de produção sejam concluídas.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Job único para implantar o conteúdo
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Fazer upload dos arquivos
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Faz o upload de todo o repositório (ajustar conforme necessário)
+          path: '.'
+
+      - name: Implantar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
