@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprenda como reaproveitar a borra de café em casa com dicas úteis e sustentáveis.">
+    <title>Como Fazer em Casa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos Gerais do Site */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header .logo-container {
+            margin-bottom: 10px;
+        }
+
+        header .logo-icon {
+            height: 50px;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .search-container button {
+            padding: 5px 10px;
+            border: none;
+            background: #555;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        ul {
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        // Função para buscar dados do JSON
+        async function loadFlowerData() {
+            try {
+                const response = await fetch('flores.json');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Erro ao carregar o arquivo JSON:', error);
+                return {};
+            }
+        }
+
+        async function searchFlower() {
+            const flowerData = await loadFlowerData();
+            const searchInput = document.getElementById("flower-name").value;
+            const resultContainer = document.getElementById("result");
+            const quantity = flowerData[searchInput];
+
+            if (quantity) {
+                resultContainer.innerHTML = <p>Para a flor <strong>${searchInput}</strong>, a quantidade recomendada de borra de café é <strong>${quantity}</strong>.</p>;
+            } else {
+                resultContainer.innerHTML = <p>Desculpe, informações sobre a flor <strong>${searchInput}</strong> não estão disponíveis.</p>;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Como Fazer em Casa</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="introducao.html">Introdução</a></li>
+                <li><a href="como-fazer.html">Como Fazer em Casa</a></li>
+                <li><a href="cuidados-10-dias.html">Cuidados por 10 Dias</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="pesquisa.html">Pesquisa</a></li>
+                <li><a href="referencias.html">Referências Bibliográficas</a></li>
+                <li><a href="relatorio.html">Relatório</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="how-to-make" class="container">
+            <h2>Como Fazer em Casa</h2>
+            <p>Reaproveitar a borra de café é uma maneira sustentável de reduzir resíduos e aproveitar suas propriedades benéficas. A borra de café é rica em nutrientes como potássio, fósforo e magnésio, o que a torna um excelente aditivo para o solo, além de possuir propriedades esfoliantes e repelentes. A seguir, você encontrará orientações sobre como utilizar a borra de café em diferentes aplicações domésticas.</p>
+
+            <h3>Ingredientes e Materiais Necessários</h3>
+            <ul>
+                <li><strong>Borra de café:</strong> Utilize a borra de café coletada após o preparo do café. Idealmente, deve ser deixada secar para prevenir mofo e facilitar o armazenamento.</li>
+                <li><strong>Água:</strong> Utilizada para diluir a borra quando esta for aplicada como fertilizante ou usada em misturas.</li>
+                <li><strong>Óleo essencial (opcional):</strong> Óleo essencial de citronela ou eucalipto pode ser adicionado à borra para potencializar o efeito repelente contra insetos.</li>
+                <li><strong>Recipientes:</strong> Para armazenar a borra seca ou prepará-la em mistura com água.</li>
+                <li><strong>Colher:</strong> Usada para misturar e aplicar a borra de café.</li>
+                <li><strong>Vasos e plantas:</strong> Locais onde a borra de café será aplicada, seja como fertilizante ou esfoliante.</li>
+            </ul>
+
+            <h3>Passo a Passo para Utilização</h3>
+            <ol>
+                <li><strong>Preparação da Borra:</strong> Após preparar o café, colete a borra e deixe-a secar completamente. A secagem é importante para evitar o crescimento de fungos e garantir que a borra possa ser armazenada por mais tempo.</li>
+                <li><strong>Como Fertilizante:</strong> A borra seca pode ser misturada diretamente no solo ao redor das plantas. Outra opção é diluí-la em água (uma parte de borra para cinco partes de água) e aplicar a mistura no solo uma vez por semana.</li>
+                <li><strong>Como Esfoliante:</strong> Aplique a borra de café diretamente sobre a pele com movimentos circulares suaves. Pode ser utilizada no rosto e no corpo para remover células mortas e melhorar a textura da pele.</li>
+                <li><strong>Como Repelente:</strong> Misture a borra com algumas gotas de óleo essencial e espalhe ao redor de áreas afetadas por insetos. A borra ajuda a repelir alguns tipos de insetos, como formigas e lesmas.</li>
+            </ol>
+
+            <h3>Quantidade Recomendada de Borra de Café para Diferentes Flores</h3>
+            <div class="search-container">
+                <label for="flower-name">Digite o nome da flor:</label>
+                <input type="text" id="flower-name" placeholder="Ex: Rosa" oninput="searchFlower()">
+            </div>
+            <div id="result" class="result">
+                <!-- O resultado da pesquisa será exibido aqui -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Reaproveitamento da Borra de Café</p>
+    </footer>
+</body>
+</html>
