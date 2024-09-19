@@ -4,12 +4,13 @@ async function loadFlowerData() {
         const response = await fetch('data/flower.json');
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
+        
         // Converte as chaves para minúsculas
-        const lowerCaseData = {};
+        const normalizedData = {};
         for (const key in data) {
-            lowerCaseData[key.toLowerCase()] = data[key];
+            normalizedData[key.toLowerCase()] = data[key];
         }
-        return lowerCaseData;
+        return normalizedData;
     } catch (error) {
         console.error('Erro ao carregar o arquivo JSON:', error);
         return {};
@@ -18,7 +19,11 @@ async function loadFlowerData() {
 
 function searchFlower() {
     const searchInput = document.getElementById("flower-name").value.toLowerCase();
-    window.location.href = `flower.html?name=${encodeURIComponent(searchInput)}`;
+    if (searchInput) {
+        window.location.href = `flower.html?name=${encodeURIComponent(searchInput)}`;
+    } else {
+        alert('Por favor, digite o nome de uma flor para pesquisar.');
+    }
 }
 
 // Função para adicionar uma barra de pesquisa na página como-fazer.html
@@ -34,7 +39,20 @@ function createSearchBar() {
         header.appendChild(searchContainer);
 
         // Adiciona evento de clique ao botão de pesquisa
-        document.getElementById("search-button").addEventListener("click", searchFlower);
+        const searchButton = document.getElementById("search-button");
+        if (searchButton) {
+            searchButton.addEventListener("click", searchFlower);
+        }
+
+        // Adiciona evento de 'Enter' para o campo de pesquisa
+        const searchInput = document.getElementById("flower-name");
+        if (searchInput) {
+            searchInput.addEventListener("keypress", (event) => {
+                if (event.key === 'Enter') {
+                    searchFlower();
+                }
+            });
+        }
     }
 }
 
