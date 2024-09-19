@@ -223,20 +223,40 @@ footer a:hover {
 /* Consultas de Mídia para Dispositivos Móveis */
 @media only screen and (max-width: 768px) {
     .container {
-        width: 90%;
+        width: 95%;
+        padding: 10px;
     }
 
     nav ul {
         flex-direction: column;
+        margin: 0;
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 5px 0;
+    }
+
+    .search-container input[type="text"],
+    .search-container button {
+        font-size: 14px;
+        padding: 8px;
     }
 
     .graph {
         max-width: 100%;
         margin: 10px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .instagram-image {
+        max-width: 250px;
+    }
+
+    .instagram-text {
+        font-size: 1em;
     }
 }
 
