@@ -222,6 +222,25 @@ footer a:hover {
     color: pink; /* Cor rosa */
 }
 
+/* Google Maps Responsivo */
+.responsive-map {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção de 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #ccc;
+    margin: 0 auto; /* Centraliza o mapa */
+}
+
+.responsive-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* Consultas de Mídia para Dispositivos Móveis */
 @media only screen and (max-width: 768px) {
     .container {
