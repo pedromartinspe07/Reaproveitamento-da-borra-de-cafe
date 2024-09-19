@@ -128,8 +128,14 @@ nav ul li a {
 }
 
 .group-img {
-    width: 60px; /* Tamanho da imagem */
-    height: 60px; /* Tamanho da imagem */
+    width: 40px; /* Tamanho da imagem */
+    height: 40px; /* Tamanho da imagem */
+}
+
+/* Estilo para os Membros */
+.group-member {
+    font-size: 1.2em; /* Aumenta o tamanho do texto */
+    margin: 5px 0; /* Espaçamento entre os membros */
 }
 
 /* Rodapé */
