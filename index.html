@@ -6,10 +6,8 @@
     <title>Reaproveitamento da Borra de Café</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
-    <!-- Adiciona o script do Font Awesome -->
     <script src="https://kit.fontawesome.com/b00b34200a.js" crossorigin="anonymous"></script>
     <style>
-        /* Estilos para o layout */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -60,6 +58,8 @@
 
         form {
             margin-top: 10px;
+            display: flex;
+            justify-content: center;
         }
 
         input[type="text"] {
@@ -138,8 +138,8 @@
                     <li><a href="quem-somos.html">Quem Somos</a></li>
                 </ul>
             </nav>
-            <form action="pesquisa.html" method="get">
-                <input type="text" name="search" placeholder="Pesquisar...">
+            <form action="search.html" method="get">
+                <input type="text" name="query" placeholder="Pesquisar...">
                 <button type="submit">Buscar</button>
             </form>
         </div>
