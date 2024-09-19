@@ -1,12 +1,12 @@
 /* Estilos Gerais do Site */
 body {
-    font-family: 'Georgia', serif, Arial, sans-serif;
+    font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
     background: #f8f9fa;
     color: #333;
     line-height: 1.6;
-    text-align: center;
+    text-align: center; /* Centraliza o texto */
 }
 
 .container {
@@ -62,10 +62,8 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
+nav ul li a:hover {
     color: #1db954;
-    outline: 2px solid #1db954;
 }
 
 /* Barra de Pesquisa */
@@ -144,7 +142,7 @@ nav ul li a:focus {
     max-width: 1100px;
     line-height: 1.7;
     color: #333;
-    text-align: center;
+    text-align: center; /* Centraliza o texto */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -158,13 +156,13 @@ p {
 }
 
 /* Estilo para a Lista de Membros */
-.member-image {
+.group-image {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
 }
 
-.member-img {
+.group-img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -213,15 +211,15 @@ footer a:hover {
 }
 
 .instagram-image {
-    width: 100%;
-    max-width: 300px;
+    width: 100%; /* ajuste conforme necessário */
+    max-width: 300px; /* ajuste conforme necessário */
 }
 
 .instagram-text {
     font-size: 1.2em;
     margin-top: 10px;
     font-weight: bold;
-    color: pink;
+    color: pink; /* Cor rosa */
 }
 
 /* Google Maps Responsivo */
@@ -232,7 +230,7 @@ footer a:hover {
     overflow: hidden;
     max-width: 100%;
     background: #ccc;
-    margin: 0 auto;
+    margin: 0 auto; /* Centraliza o mapa */
 }
 
 .responsive-map iframe {
