@@ -10,14 +10,14 @@
             font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4; /* Background da página */
-            text-align: center; /* Centraliza o texto de todo o corpo */
+            background: #f4f4f4;
+            text-align: center;
         }
 
         .container {
             width: 90%;
             margin: 0 auto;
-            padding: 0 10px; /* Adiciona espaçamento lateral */
+            padding: 0 10px;
         }
 
         /* Cabeçalho */
@@ -25,11 +25,11 @@
             background: #333;
             color: #fff;
             padding: 10px;
-            text-align: center; /* Alinha o texto no centro do cabeçalho */
+            text-align: center;
         }
 
         header .logo-container {
-            margin-bottom: 10px; /* Adiciona um espaçamento abaixo do logo */
+            margin-bottom: 10px;
         }
 
         header .logo-icon {
@@ -38,7 +38,7 @@
 
         /* Navegação */
         nav {
-            margin: 20px 0; /* Adiciona espaçamento em cima e embaixo da navegação */
+            margin: 20px 0;
         }
 
         nav ul {
@@ -47,11 +47,11 @@
             margin: 0;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Centraliza os itens da navegação */
+            justify-content: center;
         }
 
         nav ul li {
-            margin: 5px 10px; /* Ajusta o espaçamento entre os itens */
+            margin: 5px 10px;
         }
 
         nav ul li a {
@@ -62,17 +62,17 @@
 
         /* Barra de Pesquisa */
         .search-container {
-            margin: 20px 0; /* Adiciona espaçamento acima e abaixo da barra de pesquisa */
+            margin: 20px 0;
         }
 
         .search-container input[type="text"] {
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            outline: none; /* Remove o contorno padrão do navegador */
-            font-size: 16px; /* Ajusta o tamanho da fonte */
-            width: calc(100% - 22px); /* Ajusta a largura do input */
-            max-width: 400px; /* Limita a largura máxima do input */
+            outline: none;
+            font-size: 16px;
+            width: calc(100% - 22px);
+            max-width: 400px;
         }
 
         .search-container button {
@@ -82,14 +82,14 @@
             color: #fff;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px; /* Ajusta o tamanho da fonte */
+            font-size: 16px;
         }
 
         /* Estilo para Gráficos */
         .graph-container {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza os gráficos */
+            align-items: center;
             margin: 20px 0;
         }
 
@@ -100,14 +100,14 @@
             border-radius: 8px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 10px; /* Adiciona uma margem para melhor espaçamento */
+            margin: 10px;
         }
 
         .graph img {
             width: 100%;
             border-bottom: 2px solid #ccc;
-            display: block; /* Garante que a imagem ocupe toda a largura disponível */
-            margin: 0 auto; /* Centraliza a imagem horizontalmente */
+            display: block;
+            margin: 0 auto;
         }
 
         .graph h2 {
@@ -120,11 +120,11 @@
 
         /* Seções principais */
         .main-content {
-            background-color: #fff; /* Cor de fundo das seções dentro do site */
+            background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            margin: 20px auto; /* Adiciona margem para centralizar a seção */
-            max-width: 1200px; /* Define uma largura máxima para as seções */
+            margin: 20px auto;
+            max-width: 1200px;
         }
 
         /* Rodapé */
@@ -133,7 +133,7 @@
             color: #fff;
             padding: 10px;
             text-align: center;
-            position: relative; /* Garante que o rodapé fique na parte inferior da página */
+            position: relative;
             bottom: 0;
             width: 100%;
         }
@@ -181,7 +181,7 @@
         // Função para buscar dados do JSON
         async function loadFlowerData() {
             try {
-                const response = await fetch('flores.json');
+                const response = await fetch('data/flores.json');
                 const data = await response.json();
                 return data;
             } catch (error) {
@@ -192,15 +192,22 @@
 
         async function searchFlower() {
             const flowerData = await loadFlowerData();
-            const searchInput = document.getElementById("flower-name").value;
+            const searchInput = document.getElementById("flower-name").value.trim().toLowerCase();
             const resultContainer = document.getElementById("result");
             const quantity = flowerData[searchInput];
 
-            if (quantity) {
-                resultContainer.innerHTML = `<p>Para a flor <strong>${searchInput}</strong>, a quantidade recomendada de borra de café é <strong>${quantity}</strong>.</p>`;
+            if (searchInput === '') {
+                resultContainer.innerHTML = '<p>Por favor, insira o nome de uma flor para pesquisar.</p>';
+            } else if (quantity) {
+                resultContainer.innerHTML = `<p>Para a flor <strong>${capitalizeFirstLetter(searchInput)}</strong>, a quantidade recomendada de borra de café é <strong>${quantity}</strong>.</p>`;
             } else {
-                resultContainer.innerHTML = `<p>Desculpe, informações sobre a flor <strong>${searchInput}</strong> não estão disponíveis.</p>`;
+                resultContainer.innerHTML = `<p>Desculpe, informações sobre a flor <strong>${capitalizeFirstLetter(searchInput)}</strong> não estão disponíveis.</p>`;
             }
+        }
+
+        // Função para capitalizar a primeira letra de uma string
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
         }
     </script>
 </head>
@@ -237,4 +244,12 @@
                 <li><strong>Óleo essencial (opcional):</strong> Óleo essencial de citronela ou eucalipto pode ser adicionado à borra para potencializar o efeito repelente contra insetos.</li>
                 <li><strong>Recipientes:</strong> Para armazenar a borra seca ou prepará-la em mistura com água.</li>
                 <li><strong>Colher:</strong> Usada para misturar e aplicar a borra de café.</li>
-                <li><
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Reaproveitamento da Borra de Café. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
