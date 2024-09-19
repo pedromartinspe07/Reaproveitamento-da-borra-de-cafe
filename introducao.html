@@ -17,8 +17,13 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 10px 0;
+            padding: 10px;
             text-align: center;
+        }
+
+        nav {
+            margin: 0 auto;
+            max-width: 1000px;
         }
 
         nav ul {
@@ -26,18 +31,20 @@
             padding: 0;
             margin: 0;
             display: flex;
+            flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
             justify-content: center;
         }
 
         nav ul li {
-            margin: 0 10px;
+            margin: 5px 10px; /* Reduz o espaçamento para telas menores */
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            padding: 5px 10px;
+            padding: 10px 15px;
             border-radius: 4px;
+            display: block; /* Melhora a área clicável */
         }
 
         nav ul li a:hover {
@@ -59,8 +66,17 @@
             text-align: center;
             padding: 10px;
             position: relative;
-            bottom: 0;
             width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+            }
+
+            nav ul li {
+                margin: 5px 0; /* Ajusta o espaçamento vertical */
+            }
         }
     </style>
 </head>
