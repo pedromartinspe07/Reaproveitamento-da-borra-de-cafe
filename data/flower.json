@@ -1,0 +1,34 @@
+{
+    "rosa": {
+        "descricao": "A rosa é uma flor que precisa de 20g de borra de café para se desenvolver bem.",
+        "nome_cientifico": "Rosa"
+    },
+    "orquídea": {
+        "descricao": "As orquídeas gostam de 10g de borra de café misturada ao solo uma vez por mês.",
+        "nome_cientifico": "Orchidaceae"
+    },
+    "girassol": {
+        "descricao": "Os girassóis prosperam com 15g de borra de café, especialmente durante a fase de crescimento.",
+        "nome_cientifico": "Helianthus"
+    },
+    "lírio": {
+        "descricao": "Para lírios, aplique cerca de 5g de borra de café ao redor das raízes.",
+        "nome_cientifico": "Lilium"
+    },
+    "tulipa": {
+        "descricao": "As tulipas beneficiam-se de 10g de borra de café misturada ao solo durante a primavera.",
+        "nome_cientifico": "Tulipa"
+    },
+    "margarida": {
+        "descricao": "As margaridas precisam de 8g de borra de café aplicadas ao solo a cada duas semanas.",
+        "nome_cientifico": "Bellis perennis"
+    },
+    "hortênsia": {
+        "descricao": "As hortênsias prosperam com 12g de borra de café, especialmente durante a fase de floração.",
+        "nome_cientifico": "Hydrangea"
+    },
+    "lavanda": {
+        "descricao": "A lavanda se desenvolve bem com 7g de borra de café misturada ao solo uma vez por mês.",
+        "nome_cientifico": "Lavandula"
+    }
+}
