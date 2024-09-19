@@ -41,3 +41,4 @@ function createSearchBar() {
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     createSearchBar();
+});
