@@ -6,7 +6,7 @@
     <meta name="description" content="Aprenda como reaproveitar a borra de café em casa com dicas úteis e sustentáveis.">
     <title>Como Fazer em Casa</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -52,10 +52,8 @@
             <h3>Quantidade Recomendada de Borra de Café para Diferentes Flores</h3>
             <div class="search-container">
                 <label for="flower-name">Digite o nome da flor:</label>
-                <input type="text" id="flower-name" placeholder="Ex: Rosa" oninput="searchFlower()">
-            </div>
-            <div id="result" class="result">
-                <!-- O resultado da pesquisa será exibido aqui -->
+                <input type="text" id="flower-name" placeholder="Ex: Rosa">
+                <button id="search-button">Pesquisar</button>
             </div>
         </section>
     </main>
