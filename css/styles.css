@@ -15,15 +15,16 @@
         }
 
         .container {
-            width: 80%;
+            width: 90%;
             margin: 0 auto;
+            padding: 0 10px; /* Adiciona espaçamento lateral */
         }
 
         /* Cabeçalho */
         header {
             background: #333;
             color: #fff;
-            padding: 10px 0;
+            padding: 10px;
             text-align: center; /* Alinha o texto no centro do cabeçalho */
         }
 
@@ -44,11 +45,13 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centraliza os itens da navegação */
         }
 
         nav ul li {
-            display: inline-block; /* Permite o ajuste automático de largura e altura */
-            margin: 0 15px; /* Ajusta o espaçamento entre os itens */
+            margin: 5px 10px; /* Ajusta o espaçamento entre os itens */
         }
 
         nav ul li a {
@@ -63,15 +66,17 @@
         }
 
         .search-container input[type="text"] {
-            padding: 5px;
+            padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
             outline: none; /* Remove o contorno padrão do navegador */
             font-size: 16px; /* Ajusta o tamanho da fonte */
+            width: calc(100% - 22px); /* Ajusta a largura do input */
+            max-width: 400px; /* Limita a largura máxima do input */
         }
 
         .search-container button {
-            padding: 5px 10px;
+            padding: 8px 16px;
             border: none;
             background: #555;
             color: #fff;
@@ -83,13 +88,13 @@
         /* Estilo para Gráficos */
         .graph-container {
             display: flex;
-            justify-content: center; /* Centraliza os gráficos */
+            flex-direction: column;
+            align-items: center; /* Centraliza os gráficos */
             margin: 20px 0;
-            flex-wrap: wrap; /* Permite que os gráficos se ajustem em telas menores */
         }
 
         .graph {
-            width: 100%; /* Ajusta a largura para ocupar todo o espaço disponível */
+            width: 100%;
             max-width: 600px;
             border: 2px solid #ccc;
             border-radius: 8px;
@@ -126,11 +131,50 @@
         footer {
             background: #333;
             color: #fff;
-            padding: 10px 0;
+            padding: 10px;
             text-align: center;
             position: relative; /* Garante que o rodapé fique na parte inferior da página */
             bottom: 0;
             width: 100%;
+        }
+
+        /* Consultas de Mídia para Dispositivos Móveis */
+        @media only screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .search-container input[type="text"] {
+                width: calc(100% - 16px);
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .graph {
+                max-width: 100%;
+                margin: 5px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .search-container input[type="text"] {
+                font-size: 14px;
+            }
+
+            .search-container button {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+
+            .graph h2 {
+                font-size: 1.2em;
+            }
         }
     </style>
     <script>
@@ -193,11 +237,4 @@
                 <li><strong>Óleo essencial (opcional):</strong> Óleo essencial de citronela ou eucalipto pode ser adicionado à borra para potencializar o efeito repelente contra insetos.</li>
                 <li><strong>Recipientes:</strong> Para armazenar a borra seca ou prepará-la em mistura com água.</li>
                 <li><strong>Colher:</strong> Usada para misturar e aplicar a borra de café.</li>
-                <li><strong>Vasos e plantas:</strong> Locais onde a borra de café será aplicada, seja como fertilizante ou esfoliante.</li>
-            </ul>
-
-            <h3>Passo a Passo para Utilização</h3>
-            <ol>
-                <li><strong>Preparação da Borra:</strong> Após preparar o café, colete a borra e deixe-a secar completamente. A secagem é importante para evitar o crescimento de fungos e garantir que a borra possa ser armazenada por mais tempo.</li>
-                <li><strong>Como Fertilizante:</strong> A borra seca pode ser misturada diretamente no solo ao redor das plantas. Outra opção é diluí-la em água (uma parte de borra para cinco partes de água) e aplicar a mistura no solo uma vez por semana.</li>
-                <li><strong>Como Esfoliante:</strong> Aplique a borra de café diretamente sobre a pele com movimentos circulares suaves. Pode ser utilizada no rosto e no corpo para remover células mortas
+                <li><
