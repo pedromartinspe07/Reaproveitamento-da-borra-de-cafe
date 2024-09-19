@@ -34,6 +34,9 @@
             color: white;
             cursor: pointer;
         }
+        .search-container button:hover {
+            background-color: #218838;
+        }
         .result {
             text-align: center;
             font-size: 18px;
@@ -45,6 +48,7 @@
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -61,6 +65,9 @@
         async function loadFlowerData() {
             try {
                 const response = await fetch('flores.json'); // Carrega o arquivo JSON
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o arquivo JSON');
+                }
                 const data = await response.json(); // Converte os dados para um objeto JS
                 return data;
             } catch (error) {
@@ -72,16 +79,23 @@
         // Função para realizar a pesquisa e exibir o resultado
         async function searchFlower() {
             const flowerData = await loadFlowerData(); // Carrega os dados das flores
-            const searchInput = document.getElementById("flower-name").value.toLowerCase(); // Pega o valor da pesquisa e converte para minúsculo
+            const searchInput = document.getElementById("flower-name").value.trim().toLowerCase(); // Pega o valor da pesquisa e converte para minúsculo
             const resultContainer = document.getElementById("result");
             const quantity = flowerData[searchInput]; // Busca o valor no JSON
 
             // Exibe o resultado na página
-            if (quantity) {
-                resultContainer.innerHTML = `<p>Para a flor <strong>${searchInput}</strong>, a quantidade recomendada de borra de café é <strong>${quantity}</strong>.</p>`;
+            if (searchInput === '') {
+                resultContainer.innerHTML = '<p>Por favor, insira o nome de uma flor para pesquisar.</p>';
+            } else if (quantity) {
+                resultContainer.innerHTML = `<p>Para a flor <strong>${capitalizeFirstLetter(searchInput)}</strong>, a quantidade recomendada de borra de café é <strong>${quantity}</strong>.</p>`;
             } else {
-                resultContainer.innerHTML = `<p>Desculpe, não temos informações para a flor <strong>${searchInput}</strong>.</p>`;
+                resultContainer.innerHTML = `<p>Desculpe, não temos informações para a flor <strong>${capitalizeFirstLetter(searchInput)}</strong>.</p>`;
             }
+        }
+
+        // Função para capitalizar a primeira letra de uma string
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
         }
     </script>
 </body>
