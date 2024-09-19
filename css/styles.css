@@ -120,17 +120,16 @@ nav ul li a {
     max-width: 1200px;
 }
 
-/* Adicionando Estilos para a Lista de Membros */
-.team-member {
+/* Estilo para a Lista de Membros */
+.group-image {
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
 }
 
-.team-member img {
-    width: 30px; /* Ajuste o tamanho conforme necessário */
-    height: 30px; /* Ajuste o tamanho conforme necessário */
-    margin-right: 10px;
+.group-img {
+    width: 60px; /* Tamanho da imagem */
+    height: 60px; /* Tamanho da imagem */
 }
 
 /* Rodapé */
