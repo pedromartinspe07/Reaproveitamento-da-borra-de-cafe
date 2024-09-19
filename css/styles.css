@@ -200,6 +200,26 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Instagram */
+.instagram-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.instagram-image {
+    width: 100%; /* ajuste conforme necessário */
+    max-width: 300px; /* ajuste conforme necessário */
+}
+
+.instagram-text {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+    color: pink; /* Cor rosa */
+}
+
 /* Consultas de Mídia para Dispositivos Móveis */
 @media only screen and (max-width: 768px) {
     .container {
