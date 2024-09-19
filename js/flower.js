@@ -1,3 +1,4 @@
+revise e critique esse código flower.js 
 // Função para buscar dados do JSON
 async function loadFlowerData() {
     try {
