@@ -28,6 +28,9 @@ function searchFlower() {
 
 // Função para adicionar uma barra de pesquisa na página como-fazer.html
 function createSearchBar() {
+    // Verifica se a barra de pesquisa já existe
+    if (document.getElementById("flower-name")) return;
+
     if (window.location.pathname.includes('como-fazer.html')) {
         const header = document.querySelector('header');
         const searchContainer = document.createElement('div');
@@ -40,19 +43,15 @@ function createSearchBar() {
 
         // Adiciona evento de clique ao botão de pesquisa
         const searchButton = document.getElementById("search-button");
-        if (searchButton) {
-            searchButton.addEventListener("click", searchFlower);
-        }
+        searchButton.addEventListener("click", searchFlower);
 
         // Adiciona evento de 'Enter' para o campo de pesquisa
         const searchInput = document.getElementById("flower-name");
-        if (searchInput) {
-            searchInput.addEventListener("keypress", (event) => {
-                if (event.key === 'Enter') {
-                    searchFlower();
-                }
-            });
-        }
+        searchInput.addEventListener("keypress", (event) => {
+            if (event.key === 'Enter') {
+                searchFlower();
+            }
+        });
     }
 }
 
