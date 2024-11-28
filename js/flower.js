@@ -1,4 +1,26 @@
- 
+// Função para alternar o menu
+function toggleMenu() {
+    const menu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger-menu');
+    
+    hamburger.classList.toggle('active');
+    menu.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+    menu.setAttribute('aria-hidden', !menu.classList.contains('active'));
+}
+
+// Função para adicionar eventos ao menu
+function initMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            toggleMenu();
+            event.preventDefault(); // Previne o comportamento padrão
+        }
+    });
+}
+
 // Função para buscar dados do JSON
 async function loadFlowerData() {
     try {
@@ -36,5 +58,6 @@ async function displayFlowerDetails() {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
+    initMenu();
     displayFlowerDetails();
 });
