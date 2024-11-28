@@ -42,3 +42,26 @@ function createSearchBar() {
 document.addEventListener('DOMContentLoaded', () => {
     createSearchBar();
 });
+
+$(document).ready(function() {
+    $('.hamburger-menu').on('click', function() {
+        // Alternar classes de menu
+        $(this).toggleClass('active');
+        $('.nav-menu').toggleClass('active');
+        
+        // Prevenir rolagem do body
+        $('body').toggleClass('menu-open');
+        
+        // Animar itens do menu
+        $('.nav-menu li').each(function(index) {
+            $(this).css('animation-delay', `${index * 0.1}s`);
+        });
+    });
+
+    // Fechar menu ao clicar em um link
+    $('.nav-menu a').on('click', function() {
+        $('.hamburger-menu').removeClass('active');
+        $('.nav-menu').removeClass('active');
+        $('body').removeClass('menu-open');
+    });
+});
