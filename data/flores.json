@@ -1,6 +1,122 @@
 {
-    "Rosa": "A rosa é uma flor que precisa de 20g de borra de café para se desenvolver bem.",
-    "Orquídea": "As orquídeas gostam de 10g de borra de café misturada ao solo uma vez por mês.",
-    "Girassol": "Os girassóis prosperam com 15g de borra de café, especialmente durante a fase de crescimento.",
-    "Lírio": "Para lírios, aplique cerca de 5g de borra de café ao redor das raízes."
+    "Rosa": {
+        "descricao": "A rosa é uma flor que precisa de 20g de borra de café para se desenvolver bem.",
+        "nome_cientifico": "Rosa"
+    },
+    "Orquídea": {
+        "descricao": "As orquídeas gostam de 10g de borra de café misturada ao solo uma vez por mês.",
+        "nome_cientifico": "Orchidaceae"
+    },
+    "Girassol": {
+        "descricao": "Os girassóis prosperam com 15g de borra de café, especialmente durante a fase de crescimento.",
+        "nome_cientifico": "Helianthus"
+    },
+    "Lírio": {
+        "descricao": "Para lírios, aplique cerca de 5g de borra de café ao redor das raízes.",
+        "nome_cientifico": "Lilium"
+    },
+    "Tulipa": {
+        "descricao": "As tulipas beneficiam-se de 10g de borra de café misturada ao solo durante a primavera.",
+        "nome_cientifico": "Tulipa"
+    },
+    "Margarida": {
+        "descricao": "As margaridas precisam de 8g de borra de café aplicadas ao solo a cada duas semanas.",
+        "nome_cientifico": "Bellis perennis"
+    },
+    "Hortênsia": {
+        "descricao": "As hortênsias prosperam com 12g de borra de café, especialmente durante a fase de floração.",
+        "nome_cientifico": "Hydrangea"
+    },
+    "Lavanda": {
+        "descricao": "A lavanda se desenvolve bem com 7g de borra de café misturada ao solo uma vez por mês.",
+        "nome_cientifico": "Lavandula"
+    },
+    "Suculenta": {
+        "descricao": "Suculentas não devem receber borra de café, pois podem ser sensíveis a compostos ácidos.",
+        "nome_cientifico": "various"
+    },
+    "Cactos": {
+        "descricao": "Cactos não se beneficiam de borra de café e podem ser prejudicados por excesso de umidade.",
+        "nome_cientifico": "Cactaceae"
+    },
+    "Violeta": {
+        "descricao": "Violetas não devem receber borra de café, pois preferem solo mais neutro.",
+        "nome_cientifico": "Viola"
+    },
+    "Gerânio": {
+        "descricao": "Os gerânios prosperam com 15g de borra de café a cada mês, mas em pequenas quantidades.",
+        "nome_cientifico": "Pelargonium"
+    },
+    "Azaleia": {
+        "descricao": "Azaleias se beneficiam de 5g de borra de café, pois gostam de solo ácido.",
+        "nome_cientifico": "Rhododendron"
+    },
+    "Begônia": {
+        "descricao": "As begônias não devem receber borra de café, pois preferem um solo bem drenado.",
+        "nome_cientifico": "Begonia"
+    },
+    "Gardênia": {
+        "descricao": "As gardênias gostam de 10g de borra de café misturada ao solo, favorecendo o crescimento.",
+        "nome_cientifico": "Gardenia"
+    },
+    "Jasmim": {
+        "descricao": "O jasmim se beneficia de 10g de borra de café para promover florescimento.",
+        "nome_cientifico": "Jasminum"
+    },
+    "Camélia": {
+        "descricao": "As camélias preferem 15g de borra de café, pois gostam de solo ácido.",
+        "nome_cientifico": "Camellia"
+    },
+    "Flor-de-lis": {
+        "descricao": "As flores-de-lis se desenvolvem bem com 8g de borra de café misturada ao solo.",
+        "nome_cientifico": "Iris"
+    },
+    "Ciclamen": {
+        "descricao": "Os ciclamens não devem receber borra de café, pois preferem um solo neutro.",
+        "nome_cientifico": "Cyclamen"
+    },
+    "Dália": {
+        "descricao": "As dálias prosperam com 12g de borra de café durante a fase de crescimento.",
+        "nome_cientifico": "Dahlia"
+    },
+    "Frésia": {
+        "descricao": "As frésias se beneficiam de 10g de borra de café, promovendo um bom crescimento.",
+        "nome_cientifico": "Freesia"
+    },
+    "Calêndula": {
+        "descricao": "As calêndulas prosperam com 8g de borra de café, ajudando na floração.",
+        "nome_cientifico": "Calendula"
+    },
+    "Petúnia": {
+        "descricao": "As petúnias podem receber 5g de borra de café, mas em pequenas quantidades.",
+        "nome_cientifico": "Petunia"
+    },
+    "Narciso": {
+        "descricao": "Os narcisos preferem solo bem drenado e não se beneficiam de borra de café.",
+        "nome_cientifico": "Narcissus"
+    },
+    "Trombeta": {
+        "descricao": "As flores trombeta prosperam com 15g de borra de café, especialmente durante a floração.",
+        "nome_cientifico": "Brugmansia"
+    },
+    "Maracujá": {
+        "descricao": "As flores de maracujá podem se beneficiar de 10g de borra de café para um melhor crescimento.",
+        "nome_cientifico": "Passiflora"
+    },
+    "Cabelinho-de-velha": {
+        "descricao": "O cabelinho-de-velha prefere solo ácido e pode receber 10g de borra de café.",
+        "nome_cientifico": "Euphorbia"
+    },
+    "Lavanda-de-pedra": {
+        "descricao": "A lavanda-de-pedra se desenvolve bem com 8g de borra de café misturada ao solo.",
+        "nome_cientifico": "Lavandula angustifolia"
+    },
+    "Gloxinia": {
+        "descricao": "As gloxínias não devem receber borra de café, preferindo um solo mais neutro.",
+        "nome_cientifico": "Gloxinia"
+    },
+    "Miosótis": {
+        "descricao": "Os miosótis se beneficiam de 5g de borra de café, especialmente em solos ricos.",
+        "nome_cientifico": "Myosotis"
+    }
 }
