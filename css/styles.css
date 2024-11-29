@@ -468,3 +468,15 @@ a:hover {
 .welcome-text {
     text-align: center; /* Centraliza o texto */
 }
+
+.graph-container img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+@media only screen and (max-width: 768px) {
+    .graph-container img {
+        max-width: 90%; /* Ajusta a largura máxima da imagem em dispositivos móveis */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+}
