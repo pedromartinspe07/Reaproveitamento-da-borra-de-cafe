@@ -49,7 +49,7 @@ async function displayFlowerDetails() {
 
     if (flower) {
         flowerDetailsContainer.innerHTML = `
-            <p>Para a flor <strong>${flowerName}</strong> (<em>${flower.nome_cientifico}</em>), a quantidade recomendada de borra de café é <strong>${flower.descricao}</strong>.</p>
+            <p> <strong>${flowerName}</strong> (<em>${flower.nome_cientifico}</em>)<strong>${flower.descricao}</strong>.</p>
         `;
     } else {
         flowerDetailsContainer.innerHTML = `<p>Desculpe, informações sobre a flor <strong>${flowerName}</strong> não estão disponíveis.</p>`;
